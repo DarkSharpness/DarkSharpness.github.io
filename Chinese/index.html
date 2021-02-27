@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dark的网站</title>
+  <title>Dark的网站主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -13,24 +13,138 @@
   <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
   <link rel="stylesheet" type="text/css" href="css/style.min.css" />
   <style>
+    a{
+      color:yellow;
+    }
   </style>
 </head>
 
+
 <body style="background:bottom center rgb(19, 18, 36);color:white">
+
 <!--要改必须 所有的index的一起改！！！-->
+<header class="lyear-header text-center" style="background-image:url(images/left-bg.jpg);">
+  <div class="lyear-header-container">
+    <div class="lyear-mask"></div>
+    <h1 class="lyear-blogger pt-lg-4 mb-0"><a href="index.html">
+      DarkSharpness</a></h1>
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="lyear-hamburger">
+        <div class="hamburger-inner"></div>
+      </div>
+    </a>
+    
+    <div id="navigation" class="collapse navbar-collapse flex-column">
+    <div class="profile-section pt-3 pt-lg-0">
+      <img class="profile-image mb-3 rounded-circle mx-auto" src="images/logo.png" width="120" height="120" alt="笔下光年" >
+      <div class="lyear-sentence mb-3">
+        没啥好说的,有空就记录点想法.
+      </div>
+        <hr>
+    </div>
+    
+    <ul class="navbar-nav flex-column text-center">
+      <li class="nav-item active">
+        <strong>
+        <a class="nav-link" href="index.html" style="color:rgb(255, 255, 137);">
+          首页
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="blog.html" style="color:rgb(255, 255, 137);">
+          博客
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="music.html" style="color:rgb(255, 255, 137);">
+          音乐
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="http://DarkSharpness.github.io/index.html" style="color:rgb(255, 255, 137);">
+          语言 language
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="about.html "style="color:rgb(255, 255, 137);">
+          关于我
+        </a>
+      </strong>
+      </li>
+      
+    </ul>
+    
+    <!--<div class="my-2 my-md-3">
+        <form class="lyear-search-form form-inline justify-content-center pt-3">
+          <input type="email" id="semail" name="semail1" class="form-control mr-md-1" placeholder="搜索关键词" />
+        </form>
+    </div>-->
+  </div>
+  </nav>
+  </div>
+</header>
 
+  <div class="lyear-wrapper">
+    
+    <section class="mt-5 pb-5">
+      <div class="container">
 
+        <div class="row">
+          <div class="col-xl-8">
+            <!-- 文章列表  -->
 
-<div class="col-12" align="center">
-<h1 style="color: red;">选择你的语言!Choose your language</h1>
-<h2>
-<a href="Chinese/index.html">简体中文</a> &nbsp&nbsp&nbsp&nbsp
-<a href="English/index.html">English(not supported!)</a>
-</h2>
-</div>
+            <article class="lyear-arc">
+              <div class="arc-header">
+                <h2 class="arc-title" align="center">
+                  <a href="blog/news/20210131.html" >
+                  新的开始♥</a></h2>
+                <ul class="arc-meta">
+                  <li><i class="mdi mdi-calendar"></i> 2021-01-31 19:20</li>
+                </ul>
+              </div>
+
+              <div class="arc-preview">
+                <a href="blog/news/20210131.html"><img src="blog/news/20210131/20210131.jpg" alt="" class="img-fluid rounded"></a>
+              </div>
+
+              <div class="arc-synopsis">
+                <p>第一次写blog,新的起点新的开始,GOGO!</p>
+              </div>
+            </article>
+          </div>
+      
           <!-- 内容 end -->
 
+          <!-- 侧边栏 -->
+          <div class="col-xl-4">
+            <div class="lyear-sidebar" style="position: fixed;">
+              <!-- 热门文章 -->
+              <aside class="widget widget-hot-posts">
+                <div class="widget-title">热门文章</div>
+                <ul>
+                  无~
+                </ul>
+              </aside>
 
+              <!-- 归档 -->
+              <aside class="widget">
+                <div class="widget-title">归档</div>
+                <ul>
+                  <li><a href="#">2021 二月</a> (01)</li>
+                  <li><a href='#'>2021 一月</a> (00)</li>
+                </ul>
+              </aside>
+
+            </div>
+          </div>
+          <!-- 侧边栏 end -->
+        </div>
+
+      </div>
+      <!-- end container -->
+    </section>
+  </div>
 <script type="text/javascript" src="https://darksharpness.github.io/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://darksharpness.github.io/js/jquery.nicescroll.min.js"></script>
 <script type="text/javascript" src="https://darksharpness.github.io/js/bootstrap.min.js"></script>
