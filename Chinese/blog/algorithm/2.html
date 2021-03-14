@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dark的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Dark" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://darksharpness.github.io/images/logo.ico" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/js/highlight/styles/agate.css" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/css/style.min.css" />
+  <style>
+    a{
+      color: yellow;
+    }
+    huadiao{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body style="background:bottom center rgb(19, 18, 36);color:white">
+
+<!--要改必须 所有的index的一起改！！！-->
+<header class="lyear-header text-center" style="background-image:url(https://darksharpness.github.io/images/left-bg.jpg);">
+  <div class="lyear-header-container">
+    <div class="lyear-mask"></div>
+    <h1 class="lyear-blogger pt-lg-4 mb-0"><a href="https://darksharpness.github.io/Chinese/index.html">
+      DarkSharpness</a></h1>
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="lyear-hamburger">
+        <div class="hamburger-inner"></div>
+      </div>
+    </a>
+    
+    <div id="navigation" class="collapse navbar-collapse flex-column">
+    <div class="profile-section pt-3 pt-lg-0">
+      <img class="profile-image mb-3 rounded-circle mx-auto" src="https://darksharpness.github.io/images/logo.png" width="120" height="120" alt="笔下光年" >
+      <div class="lyear-sentence mb-3">
+        没啥好说的,有空就记录点想法.
+      </div>
+        <hr>
+    </div>
+    
+    <ul class="navbar-nav flex-column text-center">
+      <li class="nav-item active">
+        <strong>
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/index.html" style="color:rgb(255, 255, 137);">
+          首页
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/blog.html" style="color:rgb(255, 255, 137);">
+          博客
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/music.html" style="color:rgb(255, 255, 137);">
+          音乐
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="http://DarkSharpness.github.io/index.html" style="color:rgb(255, 255, 137);">
+          语言 language
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/about.html "style="color:rgb(255, 255, 137);">
+          关于我
+        </a>
+      </strong>
+      </li>
+      
+    </ul>
+  </div>
+  </nav>
+  </div>
+</header>
+
+
+  <div class="lyear-wrapper">
+    <section class="mt-5 pb-5">
+      <div class="container">
+
+        <div class="row">
+          <!-- 文章阅读  宽度可以自主管理!!!! -->
+          <div class="col-sm-10">
+            <article class="lyear-arc">
+              <div class="lyear-arc-detail" >
+                <h1 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="top">
+                    Hash及其运用
+                </h1>
+                <ul class="arc-meta">
+                  <li><i class="mdi mdi-calendar"></i> 2021-02-08 20:37</li>
+                  <li><i class="mdi mdi-tag-text-outline"style="color:greenyellow;"></i> 
+                    <a href="index.html"style="color:greenyellow;">算法</a></li>
+                </ul>
+                <p>
+&emsp;&emsp;今天没啥想法,来水一波Hash.哈希算法(又称散列算法)是一个十分好用的函数,它可以将一个大的集合U映射的小集合S,
+可以大大节省所需要的空间,并且保持均摊O(1)的时间复杂度.C++ 11的unordered_map/unordered_set就是基于Hash,
+其操作时间消耗明显小于基于红黑树的map,set.当然,由于实现是基于散列表,你无法查询正好比它大的元素,元素本身的性质已经被打乱了.
+下面来讲讲Hash的具体实现:将你要映射的关键词Key按位处理,例如"abcd","dark"这种字符串可以将第i位理解为X进制下一个数,
+而只要满足X大于单个字符集合的总大小即可保证不会出现元素重复.
+比如说可以将a~z记作1~26,可以将小写字符串看作27进制数,27为基数,"abcd"=21226,"dark"=79958.然而,这并没有解决全域U巨大的问题,
+随着字符串长度的增加,27进制数依旧巨大.这个时候,Hash函数就把这个数对一个较大数(最好与基数互质)取mod,
+取略小于你的空间上限的大质数,得到新的key_value.<br/>
+&emsp;&emsp;这样确实有效降低了全域大小,但这样降低空间复杂度必会带来"碰撞",即对不相等的key1与key2,经过Hash函数后,value1=value2.
+举个例子,在基数27,mod 3677的情况下,Hash("abcd") = Hash("dark"),这就会带来问题.解决方案常见的有很多,我们具体问题具体分析.
+我可以先告诉你,这并不会很大的影响时间复杂度并且在取合适的mod的情况下,碰撞期望几率极低.<br/>
+&emsp;&emsp;简而言之 Hash(x)=(int( x ) mod P) 其中int函数可以将x映射为整数,x可以是字符串也可以是状态等抽象概念.
+                </p>
+                <h4 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="#Hashtable">
+                    Hash表(散列表)
+                </h4>
+&emsp;&emsp;在Hash表中,由于要开一个数组记录数据,其取模的数字P不能超过内存上限,应当选取一个略小于内存上限的质数P.
+在这种情况下,如果遇到Hash碰撞,可以在碰撞处的key设置一个链表进一步查询,达到局部朴素,全段O(1).如果非常不幸的,你每次插入的元素都是在一个点,
+那么n次查询m个元素的Hash表复杂度将从O(n)变成极差的O(n*m),但这是小概率事件.事实上,对于一个大小为S的Hash表,m个元素都相等的概率只有1/(S!)
+在一般情况下,只要S,m均不是太大,平均复杂度依然是O(1)的,在随机的数据上跑的还是很快的.插一幅百度百科的图.
+                <p>
+                <div class="arc-preview" style="text-align:center;" id="a">
+                  <a href="hash/1.png"><img src="hash/1.png" alt="" class="img-fluid rounded"></a>
+                </div>
+&emsp;&emsp;在正常的情况下,我们可以直接使用C++ 11的unordered_map/unordered_set来实现,常数较大,但毕竟比map/set少了一个log的复杂度,还是应当考虑使用的.
+下面是其性能的比较:                
+<div class="arc-preview" style="text-align:center;" id="a">
+    <a href="hash/2.png"><img src="hash/2.png" alt="" class="img-fluid rounded"></a>
+</div>  
+<div class="arc-preview" style="text-align:center;" id="a">
+    <a href="hash/3.png"><img src="hash/3.png" alt="" class="img-fluid rounded"></a>
+</div>
+&emsp;&emsp;都是测试了十组,每组都是1e6的数据量,但是前者没开O2优化,后者开了.可以看出无论如何,unordered_set都是要比set快一倍左右的.
+但是似乎差距也不是很大,甚至我自己做题有一次用unordered_map在O2优化下跑的比map慢,这就很离谱了.所以我建议在确定数据大小的情况下可以手写哈希表,
+<huadiao>(当然Hash被卡了我也没办法,谁叫你不会选质数)</huadiao>.当然大部分情况下unordered_map还是比map快的.
+常用的质数一般有1e5+3,1e5+19,1e6+3,1e6+33.可以卡1e5,1e6左右的内存(个人喜欢多开点数组).
+事实证明,手写Hash表远不如std::map,所以各位还是别浪费时间手写Hash表了,真的不会卡你那么点时间的!
+            </p>
+            <h4 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="#Hashstring">
+                字符串Hash
+            </h4>
+&emsp;&emsp;作为字符串Hash,只需要相应的数组记录其Hash值,Hashmod可以取得较大.常用的方法有用unsigned long long超过2^64自动溢出(此时基数p就不能取128!)
+如果出题人善心大发那么你可以过,但如果被卡也没有办法.大质数有212370440130137957 (luogu找到的),1222827239 ,1610612741 ,3221225473 ,100001119 ,100001131 ,100001147 ,100001159等可以选择.
+为了保证正确,可以双哈希甚至三哈希,用2~3倍空间时间换准确度.基数常常取131,233这种与128同数量级的,当然你也可以取10037(瞎选的).好处十分明显,可以O(n)预处理,并且O(1)比较.
+<br/>&emsp;&emsp;例题:给定一个字符串长度n,m次询问[l,r]这个区间中最小循环元长度多少.
+<a href="https://www.luogu.com.cn/problem/P3538">(Luogu P3538)</a><br/>
+&emsp;&emsp;首先引入一些小定理,对于S(1~n) 最小循环元长度len(这里假设len!=n),其充要条件是S(1~n-len)=S(len+1~n).这很显然,就不证明了.
+对于<a href="string.html#KMP">KMP算法</a>,最小循环元为n-next[n] (如果n为其倍数!如果不是就是自己的长度!).但是KMP算法不方便解决以任意开头子串的next
+(KMP的next是针对1的,从头开始匹配).所以考虑字符串Hash.
+为了能在mlogn时间卡过去,需要用到线性筛,可以快速O(nlogn)与处理出1~n每个数的质因数.<br/>
+对于一个数n,其数上限就 2logn 个(未完待续~)
+            </article>
+            
+          </div>
+          <!-- 内容 end -->
+          <div class="col-sm-2">
+            <div class="lyear-sidebar" style="position: fixed;">
+              <!-- 快速访问 -->
+              <aside class="widget widget-hot-posts">
+                <div class="widget-title"> 快速访问 </div>
+                <ul  >
+                  <li>
+                    <a href="#top">顶部</a> 
+                  </li>
+                  <li>
+                    <a href="#Hashtable">Hash表</a>
+                  </li>
+                  <li>
+                    <a href="#Hashstring">字符串Hash</a>
+                  </li>
+                </ul>
+              </aside>
+  
+              <!-- 相关文章 -->
+              <aside class="widget">
+                <div class="widget-title">相关文章</div>
+                <ul>
+                  <li><a href="">暂无</a></li>
+                </ul>
+              </aside>
+  
+              <!-- 标签 -->
+            </div>
+          </div>
+          <!-- 侧边栏 end -->
+        </div>
+
+      </div>
+      <!-- end container -->
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dark的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Dark" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://darksharpness.github.io/images/logo.ico" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/js/highlight/styles/agate.css" />
+  <link rel="stylesheet" type="text/css" href="https://darksharpness.github.io/css/style.min.css" />
+  <style>
+    a{
+      color: yellow;
+    }
+    huadiao{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body style="background:bottom center rgb(19, 18, 36);color:white">
+
+<!--要改必须 所有的index的一起改！！！-->
+<header class="lyear-header text-center" style="background-image:url(https://darksharpness.github.io/images/left-bg.jpg);">
+  <div class="lyear-header-container">
+    <div class="lyear-mask"></div>
+    <h1 class="lyear-blogger pt-lg-4 mb-0"><a href="https://darksharpness.github.io/Chinese/index.html">
+      DarkSharpness</a></h1>
+    <nav class="navbar navbar-expand-lg">
+    <a class="navbar-toggler" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="lyear-hamburger">
+        <div class="hamburger-inner"></div>
+      </div>
+    </a>
+    
+    <div id="navigation" class="collapse navbar-collapse flex-column">
+    <div class="profile-section pt-3 pt-lg-0">
+      <img class="profile-image mb-3 rounded-circle mx-auto" src="https://darksharpness.github.io/images/logo.png" width="120" height="120" alt="笔下光年" >
+      <div class="lyear-sentence mb-3">
+        没啥好说的,有空就记录点想法.
+      </div>
+        <hr>
+    </div>
+    
+    <ul class="navbar-nav flex-column text-center">
+      <li class="nav-item active">
+        <strong>
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/index.html" style="color:rgb(255, 255, 137);">
+          首页
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/blog.html" style="color:rgb(255, 255, 137);">
+          博客
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/music.html" style="color:rgb(255, 255, 137);">
+          音乐
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="http://DarkSharpness.github.io/index.html" style="color:rgb(255, 255, 137);">
+          语言 language
+        </a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" href="https://darksharpness.github.io/Chinese/about.html "style="color:rgb(255, 255, 137);">
+          关于我
+        </a>
+      </strong>
+      </li>
+      
+    </ul>
+  </div>
+  </nav>
+  </div>
+</header>
+
+  <div class="lyear-wrapper">
+    <section class="mt-5 pb-5">
+      <div class="container">
+
+        <div class="row">
+          <!-- 文章阅读  宽度可以自主管理!!!! -->
+          <div class="col-sm-10">
+            <article class="lyear-arc">
+              <div class="lyear-arc-detail" >
+                <h1 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="top">
+                    字符串基础算法
+                </h1>
+                <ul class="arc-meta">
+                  <li><i class="mdi mdi-calendar"></i> 2021-02-05 21:21</li>
+                  <li><i class="mdi mdi-tag-text-outline"style="color:greenyellow;"></i> 
+                    <a href="index.html"style="color:greenyellow;">算法</a></li>
+                </ul>
+                <p>
+                  &emsp;&emsp;众所周知,字符串算法在算法竞赛中 <a href="https://www.luogu.com.cn/problem/list?tag=2,302%7C82,83&page=1">常常考察</a>           
+                ,在日常生活中也有许多的引用.例如KMP算法就可以用于DNA片段的匹配,以O(n+m)的复杂度高效完成;
+                字符串Hash的映射和冲突处理可以大大缩减所需要的内存并依旧可以高效查找;
+                AC自动机可以用于多模式匹配,可以一次性高效率找出待查找的字符串.
+                今天，我先来讲讲基础的字符串算法.
+                </p>
+                <h4 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="basic">
+                    字符串基础之输入输出大小比较
+                </h4>
+                <p>
+                    &emsp;&emsp;首先是C++字符串的使用,输入和输出
+                    <huadiao>(如果这都不会建议放弃)</huadiao>.
+                    当时间不是主要矛盾或者你不知道字符串长度时,可以使用std::string,需要头文件string.
+                    一般情况下呢,我还是喜欢使用scanf("%s",str),printf("%s",str),str是char *类型.
+                    当然了,也可以用s[++i]=getchar()读入,i是int类型,初始值建议为0/1
+                    注意,前两种方法读入的字符串是读到空格或换行结束,不会读入空格和换行,初始的空格换行会跳过!
+                    如果想要读入的空格,可以用第三种while((s[++i]=getchar())!='\n'),但要处理好换行.
+                    第三种方法会把上一行没读入的换行和空格也吃了,谨慎使用!</br>
+                    如图所示:
+                    <div class="arc-preview" id="a">
+                        <a href="string/1.jpg"><img src="string/1.jpg" alt="" class="img-fluid rounded"></a>
+                    </div>
+                    &emsp;&emsp;对于第二种方法,空格也是被读入了的.
+                    简而言之,scanf/printf yyds!(大雾)
+                    <br/>
+                    char类型实际上是可以比较大小的,强制转换为int后是一个0~127的数字.
+                    int('0')的大小就是48,其他的详见
+                    <a href="http://ascii.911cha.com">ASCII</a><br/>
+                    比较字符串(string或char *类型)从左开始,ASCII值大的则大,如果第一位一样则继续比后面一位.
+                    <br/>e.g. "abcd"="abcd" "abcd">"abc" 'a'>'0'
+                    <br/>&nbsp&nbsp&nbsp&nbsp常见字符串操作还有strlen(s)可以O(字符串长度)求出s的长度
+                    如果字符串(两串至少有一串是std::string)直接相加则会连在后面,如"abc"+"de"="abcde",不存在其他四则运算.
+
+                </p>
+                <h4 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="KMP">
+                  KMP算法及其运用
+                </h4>
+                <p>
+                  &emsp;&emsp;KMP算法一种改进的模式匹配算法,是D.E.Knuth、V.R.Pratt、J.H.Morris于1977年联合发表,KMP算法又称克努特-莫里斯-普拉特操作.
+                  它可以用于字符串匹配,考虑以下问题:给定一个字符串s1长度n,求出它在字符串s2(长度m)中出现了多少次、出现在哪里?需要在O(m+n)的时间内解决.                
+                  <br/>&emsp;&emsp;如果暴力一一匹配,时间复杂度将会达到O(mn),如果是DNA比对,一共30多亿对,找出其中长度1000的一段基因将会需要很久.
+                    因此,突破口在于每次匹配都要匹配m次,如果能减少匹配次数就可以有效降低时间浪费.
+                    kmp算法的流程则是通过设置一个next数组以及模拟指针j来降低枚举数量
+                  <br/>&emsp;&emsp; next[i]数组的]含义是对于字符串s1(1~i),其最大前缀next[i]的长度,
+                  满足s1(1~next[i])=s1(i-next[i]+1,i)不存在就是0,注意next[i]严格小于i(因为自己=自己)                  
+                  <div class="arc-preview" style="text-align:center;" id="a">
+                    <a href="string/1.png"><img src="string/1.png" alt="" class="img-fluid rounded"></a>
+                    <a href="https://baike.baidu.com/item/KMP%E7%AE%97%E6%B3%95">(图片来源百度百科,侵删)</a>
+                  </div>
+                  &emsp;为了方便,后文下标依然从1开始.对于从1~n循环的变量i,s1(1,next[i]-1)=s1(i-next[i]+1,i),记录
+                  i-1的next为j=next[i-1].
+                  <div style="color: red;"><strong>
+                    如果 s1[j+1]和s1[i] 不相等,那么让 j=next[j]
+                    (由于s1(1 ~ j)=s1(i-j ~ i-1),当t=next[j]之后,s1(1 ~ t)=s1(j-t+1 , j)=s1(i-t ~ i-1)也相等,这是出自next的定义!)
+                    ,递归下去继续比较直到相等或j=0<br>
+                    &emsp;&emsp;如果比较到相等,那么此时已经有s1(1~j)=s1(i-j ~ i),叠加上相等的这两个可以推断出:s1(1~j+1)=s1(i-j,i),
+                    又因为若此时存在i>k>j+1满足s1(1 ~ k)=s1(i-k+1 ~ i),那么去掉k和i(由k定义可s[k]=s[i])s1(1 ~ k-1)=s1(1-k+1 ~ i),
+                    那么j应该为k-1才算最大(就是说 记j是next[j0](递归中从j0推导过来),那么next[j0]应该不是j 是k),
+                    与next的定义矛盾 ! 所以不存在这样的k,故next[i]=j+1;
+                    特别的,如果递归到了0 如果s1[1]=s1[i]就是1,不然是0.
+                  </strong>
+                  </div>
+                    &emsp;&emsp;所以可以设计一个while循环,直到j=0或者s1[j+1]=s1[i]退出;
+                    如果s1[j+1]=s1[i],j++(防止递归到0后的讨论);
+                    最后j=next[i];
+                    由于j每次最多加1,且每次while执行跳next,j至少减少1,所以执行次数最多2*n;
+                    对于匹配部分类似的,只需改成判断s2[i]==s1[j+1]即可;
+                    如果j达到了n,说明匹配到了一个s1,末尾位置就是j;
+                    <div class="arc-preview" id="a">
+                      <a href="https://www.luogu.com.cn/problem/P3375">代码(模板见Luogo P3375)</a>
+                      如下
+                  </div>
+                    <pre style="background:rgb(45, 43, 53);color: white;" >
+#include < bits/stdc++.h >
+using namespace std ;
+typedef long long ll ;
+const ll N=5e6+10;
+ll nxt[N];
+char s1[N],s2[N];
+int main()
+{
+  scanf("%s%s",s1+1,s2+1);
+  ll l1=strlen(s1+1),l2=strlen(s2+1);
+  for(ll i=2,j=0 ; i<=l1 ; i++ ) //预处理
+  {
+    while( j && s1[i]!=s1[j+1] ) j=nxt[j];
+    if( s1[i]==s1[j+1] ) j++;
+    nxt[i]=j;
+  }
+  for(ll i=1,j=0; i<=l2 ; i++)
+  {
+    while( j && s2[i]!=s1[j+1] )j=nxt[j]; //如果匹配不上
+    if( s2[i]==s1[j+1] ) j++;//
+    if( j==l1 )//匹配长度
+    {
+      j=nxt[j]; //如果两个匹配串不允许有重叠部分就是0
+      printf("%lld\n",i-l1+1); //匹配的位置		
+    }
+  }
+  for(ll i=1 ; i<=l1 ; ++i)//输出nxt用于验证
+    printf("%lld ",nxt[i]);
+  return 0 ;
+}
+                    </pre>
+                  </p>
+                  <h4 class="text-center mt-0 mb-3 pb-3" style="color: pink;" id="manacher">
+                    manacher算法
+                  </h4>
+                  <p>
+                    &emsp;&emsp;背景不多介绍了,直接上题(Luogu P3805,单击图片传送)
+                    <div class="arc-preview" id="a">
+                      <a href="https://www.luogu.com.cn/problem/P3805"><img src="string/2.jpg" alt="" class="img-fluid rounded"></a>
+                    </div>
+&emsp;&emsp;首先我们要清楚一点:奇数长度的回文串和偶数长度的枚举方式有所不同.回文串是指正着反着读都一样的字符串.
+因此奇串中心是字符,偶串中心是在字符中间,要分开讨论.为了方便,我们可以在字符中间添加字符串中不存在的字符如'#'.
+这样一来,回文串中心必定是一个字符(ABA-->A#B#A,AA-->A#A),可以减少后面的讨论.<br/>
+&emsp;&emsp;朴素做法非常简单,每个点为中心向外暴力枚举,如果不加优化的话可以达到惊人的O(n^2)的复杂度.
+优化也十分简单,回文串中心选定后,如果左右扩展n个字符都相等,那么扩展k(n>k)个的字符也是相等的.
+因此可以<a href="2.html"> Hash</a>+二分答案
+求出每个点(位置i)为中心回文串最大长度,单次复杂度log(min(n-i,i)),总复杂度O(nlogn).<br/>
+&emsp;&emsp;如何继续优化?首先,以上做法最大的问题在于你无法利用前面匹配好的信息.
+对于字符串"aaaaaaaaaaaaaaaa"每次都要重新扩展,而O(n)的基础复杂度是无法突破的(读入就n次了),我们只能考虑如何维持在O(n).<br/>
+&emsp;&emsp;manacher算法通过利用回文串对称全等的性质使得算法复杂度保持在O(n),维护一个id使得它的回文串右端最大
+即以id为中心的最长回文串的右端maxr最大,同时记录以每个位置为中心的回文串最大扩展长度p[i](包括自己).<br/>
+<div style="color: red;"><strong>
+&emsp;&emsp;由定义可以,以位置i为中心的最长回文串长度len[i]=2*p[i]-1,又因为实际上我们添加了'#'这种简化算法的字符,所以实际答案就是p[i]-1的最大值.
+而maxr=id+p[id],其对应左端记作left.如果每次枚举的i落在了maxr的范围内,由回文子串的性质,在left~maxr的范围内,i与2*id-i对称.
+所以可以预处理长度为p[2*id-i],注意必须在范围内,即i&lt;maxr且p不能超过回文串的范围,即p[i]<=r-i+1.如果不在范围内,什么都不能确定
+所以可以得出 p[i]=( i&ltmaxr ) ? min(r-i+1,p[2*id-i]) : 1 ;<br/>
+</strong></div>     
+&emsp;&emsp;最后是复杂度证明,除了你能确定的范围外,剩下的p[i]还得继续拓展(可以用while循环
+while(s[i+p[i]]==s[i-p[i]])++p[i];),所以可能有人认为上限是O(n^2).
+但事实上,他的复杂度确实是O(n),重点在于很多情况下,继续拓展的代码不会被执行.<br/>
+                      <div class="arc-preview" id="a">
+                        <a href="string/3.jpg"><img src="string/3.jpg" alt="" class="img-fluid rounded"></a>
+                      </div>
+&emsp;&emsp;如图所示,因为对称了,所以右半边未能扩展出去的都不用再计算while了,while循环立刻跳出.
+可以看出,如果p[i]成功拓展了,while执行,只能说明此时的i+p[i]已经大于了maxr的部分了,因为对称等同前面的部分确定了,
+只有超出对称范围的不确定,而maxr又是递增的,每次++p[i]对应更新的maxr也是++,而maxr最多达到字符串长度O(n),所以while只被执行了
+O(n)次,再加上预处理等操作也是O(n),所以总复杂度还是O(n).<br/>
+&emsp;&emsp;下面将会贴上正确代码.需要注意的一点是:
+<div style="color: red;"><strong>
+为了防止下标越界,可以设置s[0]为一种未出现的字符,这样就不用while循环判负了.
+</strong></div>
+<pre style="background:rgb(45, 43, 53);color: white;" >
+#include< bits/stdc++.h >
+using namespace std;
+typedef long long ll;
+const ll N=3.3e7+10;
+char s[N],str[N];
+int p[N];//最远可以扩展的长度;
+
+int main()
+{
+    scanf("%s",str);int slen=strlen(str),len=1;
+    s[0]='1';//防止匹配到0后依然相等然后就挂掉了p[i]变成了负数
+    s[1]='0';//第一个依然赋值为0
+    for(int i=0 ; i< slen ; ++i)
+    {
+        s[++len]=str[i];
+        s[++len]='0';
+    }//最后一个也是0
+    int maxr=1,id=1,ans=0;
+    for(int i=1 ; i<len ; ++i)
+    {
+        p[i]= maxr>i ? min(p[2*id-i],maxr-i) : 1 ;
+        // 如果在最大右端以内,则直接考虑对称部分的
+        while(s[i+p[i]]==s[i-p[i]]) ++p[i];//s[0]特殊值不会越界;
+        if(i+p[i]>maxr)
+        {
+            maxr=i+p[i];//最大的右端id的 右端位置
+            id=i;       //右端最大即当前id+p[id]最大的id
+        }
+        ans=max(p[i],ans);
+    }
+    printf("%d",ans-1);
+    return 0;
+}
+</pre>
+
+            </p>
+
+                  
+            </article>
+            
+          </div>
+          <!-- 内容 end -->
+          <div class="col-sm-2">
+            <div class="lyear-sidebar" style="position: fixed;">
+              <!-- 快速访问 -->
+              <aside class="widget widget-hot-posts">
+                <div class="widget-title"> 快速访问 </div>
+                <ul  >
+                  <li>
+                    <a href="#top">顶部</a> 
+                  </li>
+                  <li>
+                    <a href="#basic">基础</a>
+                  </li>
+                  <li>
+                    <a href="#KMP">KMP算法</a>
+                  </li>
+                  <li>
+                    <a href="#manacher">manacher</a>
+                  </li>
+                </ul>
+              </aside>
+  
+              <!-- 相关文章 -->
+              <aside class="widget">
+                <div class="widget-title">相关文章</div>
+                <ul>
+                  <li><a href="2.html">下一篇</a></li>
+                  <li></li>
+                </ul>
+              </aside>
+  
+              <!-- 标签 -->
+            </div>
+          </div>
+          <!-- 侧边栏 end -->
+        </div>
+
+      </div>
+      <!-- end container -->
+    </section>
+</div>
+
+</body>
+</html>
