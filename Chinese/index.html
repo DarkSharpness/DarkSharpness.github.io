@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dark的博客</title>
+  <title>Dark主站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -83,13 +83,14 @@
 </header>
 
 
-  <div class="lyear-wrapper">
+  <div class="lyear-wrapper" id="top">
     
     <section class="mt-5 pb-5">
       <div class="container">
 
         <div class="row">
-          <div class="col-xl-8">
+          
+            <div class="col-sm-11">
             <!-- 文章列表  -->
 
             <article class="lyear-arc">
@@ -98,7 +99,7 @@
                   <a href="blog/news/20210131.html" >
                   新的开始♥</a></h2>
                 <ul class="arc-meta">
-                  <li><i class="mdi mdi-calendar"></i> 2021-01-31 19:20</li>
+                  <li><i class="mdi mdi-calendar" id="202106"></i> 2021-01-31 19:20</li>
                 </ul>
               </div>
 
@@ -106,37 +107,36 @@
                 <a href="blog/news/20210131.html"><img src="blog/news/20210131/20210131.jpg" alt="" class="img-fluid rounded"></a>
               </div>
 
-              <div class="arc-synopsis">
+              <div class="arc-synopsis" id="bottom">
                 <p>第一次写blog,新的起点新的开始,GOGO!</p>
               </div>
             </article>
           </div>
       
-          <!-- 内容 end -->
 
-          <!-- 侧边栏 -->
-          <div class="col-xl-4">
-            <div class="lyear-sidebar" style="position: fixed;">
-              <!-- 热门文章 -->
-              <aside class="widget widget-hot-posts">
-                <div class="widget-title">热门文章</div>
-                <ul>
-                  无~
-                </ul>
-              </aside>
-
-              <!-- 归档 -->
-              <aside class="widget">
-                <div class="widget-title">归档</div>
-                <ul>
-                  <li><a href="#">2021 二月</a> (01)</li>
-                  <li><a href='#'>2021 一月</a> (00)</li>
-                </ul>
-              </aside>
+           <!--快速访问栏-->
+            <div class="col-sm-1">
+                <div class="lyear-sidebar" style="position: fixed;">
+                <!-- 快速访问 -->
+                <aside class="widget widget-hot-posts">
+                    <div class="widget-title"> 快速访问 </div>
+                    <ul  >
+                    <li>
+                        <a href="#top">顶部</a> 
+                    </li>
+                    <li>
+                        <a href="#202106">2021-06</a>
+                    </li>
+                    <li>
+                        <a href="#bottom">底部</a>
+                    </li>
+                    </ul>
+                </aside>
+                <!-- 标签 -->
+                </div>
 
             </div>
-          </div>
-          <!-- 侧边栏 end -->
+            <!-- 侧边栏 end -->
         </div>
 
       </div>
