@@ -2,7 +2,7 @@ document.write(""+
 "    <header class='lyear-header text-center' style='background-image:url(https://darksharpness.github.io/images/left-bg.jpg);'>"+
 "  <div class='lyear-header-container'>"+
 "    <div class='lyear-mask'></div>"+
-"    <h1 class='lyear-blogger pt-lg-4 mb-0'><a href='https://darksharpness.github.io/index.html'>"+
+"    <h1 class='lyear-blogger pt-lg-4 mb-0'><a href='https://darksharpness.github.io/Chinese/index.html'>"+
 "      DarkSharpness</a></h1>"+
 "    <nav class='navbar navbar-expand-lg'>"+
 "    <a class='navbar-toggler' data-toggle='collapse' data-target='#navigation' aria-controls='navigation' aria-expanded='false' aria-label='Toggle navigation'>"+
@@ -23,27 +23,27 @@ document.write(""+
 "    <ul class='navbar-nav flex-column text-center'>"+
 "      <li class='nav-item active'>"+
 "        <strong>"+
-"        <a class='nav-link' href='https://darksharpness.github.io/index.html' style='color:rgb(255, 255, 137);'>"+
+"        <a class='nav-link' href='https://darksharpness.github.io/Chinese/index.html' style='color:rgb(255, 255, 137);'>"+
 "          首页"+
 "        </a>"+
 "      </li>"+
 "      <li class='nav-item'>"+
-"        <a class='nav-link' href='https://darksharpness.github.io/blog.html' style='color:rgb(255, 255, 137);'>"+
+"        <a class='nav-link' href='https://darksharpness.github.io/Chinese/blog.html' style='color:rgb(255, 255, 137);'>"+
 "          博客"+
 "        </a>"+
 "      </li>"+
 "      <li class='nav-item' >"+
-"        <a class='nav-link' href='https://darksharpness.github.io/music.html' style='color:rgb(255, 255, 137);'>"+
+"        <a class='nav-link' href='https://darksharpness.github.io/Chinese/music.html' style='color:rgb(255, 255, 137);'>"+
 "          音乐"+
 "        </a>"+
 "      </li>"+
 "      <li class='nav-item' >"+
-"        <a class='nav-link' href='http://DarkSharpness.github.io/index.html' style='color:rgb(255, 255, 137);'>"+
+"        <a class='nav-link' href='http://DarkSharpness.github.io/Chinese/index.html' style='color:rgb(255, 255, 137);'>"+
 "          语言 language"+
 "        </a>"+
 "      </li>"+
 "      <li class='nav-item' >"+
-"        <a class='nav-link' href='https://darksharpness.github.io/about.html 'style='color:rgb(255, 255, 137);'>"+
+"        <a class='nav-link' href='https://darksharpness.github.io/Chinese/about.html 'style='color:rgb(255, 255, 137);'>"+
 "          关于我"+
 "        </a>"+
 "      </strong>"+
