@@ -59,5 +59,5 @@ document.write(""+
 "  </div>"+
 "  </nav>"+
 "  </div>"+
-"</header>"+
-"}");
+"</header>"
+);
