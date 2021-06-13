@@ -33,8 +33,8 @@ document.write(""+
 "        </a>"+
 "      </li>"+
 "      <li class='nav-item' >"+
-"        <a class='nav-link' href='https://darksharpness.github.io/Chinese/music.html' style='color:rgb(255, 255, 137);'>"+
-"          音乐"+
+"        <a class='nav-link' href='https://darksharpness.github.io/Chinese/diary.html' style='color:rgb(255, 255, 137);'>"+
+"          日记"+
 "        </a>"+
 "      </li>"+
 "      <li class='nav-item' >"+
